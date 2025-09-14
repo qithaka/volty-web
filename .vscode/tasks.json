@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Next.js > Development Server",
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Next.js > Build Production",
+      "type": "shell",
+      "command": "pnpm build",
+      "group": "build"
+    },
+    {
+      "label": "Next.js > Production Server",
+      "type": "shell",
+      "command": "pnpm start",
+      "group": "none"
+    },
+    {
+      "label": "Code > Lint & Clean",
+      "type": "shell",
+      "command": "pnpm lint",
+      "group": "test"
+    },
+    {
+      "label": "Git > Save Staged Diff",
+      "type": "shell",
+      "command": "git diff --cached > diff.log",
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "Git > Fetch All",
+      "type": "shell",
+      "command": "git fetch --all",
+      "group": "none",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true,
+        "showReuseMessage": true,
+        "focus": false
+      },
+      "detail": "Fetch all remotes and branches"
+    }
+  ]
+}
