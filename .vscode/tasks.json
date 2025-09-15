@@ -9,32 +9,37 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "detail": "Run the app during development."
     },
     {
       "label": "Next.js > Build Production",
       "type": "shell",
       "command": "pnpm build",
-      "group": "build"
+      "group": "build",
+      "detail": "Prepare the app for production."
     },
     {
       "label": "Next.js > Production Server",
       "type": "shell",
       "command": "pnpm start",
-      "group": "none"
+      "group": "none",
+      "detail": "Run the builded app on production."
     },
     {
       "label": "Code > Lint & Clean",
       "type": "shell",
       "command": "pnpm lint",
-      "group": "test"
+      "group": "test",
+      "detail": "Ensure that the codebase aligns with eslint conventions."
     },
     {
       "label": "Git > Save Staged Diff",
       "type": "shell",
       "command": "git diff --cached > diff.log",
       "group": "none",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "detail": "Generate a diff file for commit message generation."
     },
     {
       "label": "Git > Fetch All",
@@ -49,7 +54,7 @@
         "showReuseMessage": true,
         "focus": false
       },
-      "detail": "Fetch all remotes and branches"
+      "detail": "Fetch all remotes and branches."
     }
   ]
 }

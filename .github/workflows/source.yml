@@ -1,0 +1,26 @@
+name: Source Branch Validation
+
+on:
+  pull_request:
+    branches: [production]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  enforce:
+    name: Validate PR source branch into production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure only development branch can merge into production
+        run: |
+          BASE="${{ github.event.pull_request.base.ref }}"
+          HEAD="${{ github.event.pull_request.head.ref }}"
+
+          echo "Base branch: $BASE"
+          echo "Head branch: $HEAD"
+
+          if [ "$BASE" = "production" ] && [ "$HEAD" != "development" ]; then
+            echo "Source > Invalid: Only 'development' can merge into 'production'."
+            exit 1
+          fi
+
+          echo "Source > Valid: 'development' is merging into 'production'."
