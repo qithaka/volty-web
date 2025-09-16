@@ -19,6 +19,8 @@
       }
     ],
     "paths": {
+      "@components/layout": ["./exports/components/layout"],
+      "@components/page": ["./exports/components/page"],
       "@/*": ["./*"]
     }
   },
