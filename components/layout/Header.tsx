@@ -1,3 +1,7 @@
-export default function Header() {
-  return <header></header>;
+interface Props {
+  className: string;
+}
+
+export default function Header({ className }: Props) {
+  return <header className={className}></header>;
 }
