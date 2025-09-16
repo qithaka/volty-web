@@ -1,109 +1,5 @@
 @import 'tailwindcss';
 
-@media (prefers-color-scheme: dark) {
-  html[data-theme='system'] {
-    --background-color: #1e1e1e;
-    --foreground-color: #f5f5f5;
-    --transparent-color: color-mix(
-      in srgb,
-      var(--background-color) 75%,
-      var(--foreground-color) 0%
-    );
-    --accent-color: color-mix(
-      in srgb,
-      var(--background-color) 84%,
-      var(--foreground-color) 7%
-    );
-    --neutral-color: color-mix(
-      in srgb,
-      var(--background-color) 84%,
-      var(--foreground-color) 21%
-    );
-    --highlight-color: color-mix(
-      in srgb,
-      var(--background-color) 84%,
-      var(--foreground-color) 14%
-    );
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  html[data-theme='system'] {
-    --background-color: #f5f5f5;
-    --foreground-color: #1e1e1e;
-    --transparent-color: color-mix(
-      in srgb,
-      var(--background-color) 75%,
-      var(--foreground-color) 0%
-    );
-    --accent-color: color-mix(
-      in srgb,
-      var(--background-color) 84%,
-      var(--foreground-color) 7%
-    );
-    --neutral-color: color-mix(
-      in srgb,
-      var(--background-color) 84%,
-      var(--foreground-color) 21%
-    );
-    --highlight-color: color-mix(
-      in srgb,
-      var(--background-color) 84%,
-      var(--foreground-color) 14%
-    );
-  }
-}
-
-html[data-theme='light'] {
-  --background-color: #f5f5f5;
-  --foreground-color: #1e1e1e;
-  --transparent-color: color-mix(
-    in srgb,
-    var(--background-color) 75%,
-    var(--foreground-color) 0%
-  );
-  --accent-color: color-mix(
-    in srgb,
-    var(--background-color) 84%,
-    var(--foreground-color) 7%
-  );
-  --neutral-color: color-mix(
-    in srgb,
-    var(--background-color) 84%,
-    var(--foreground-color) 21%
-  );
-  --highlight-color: color-mix(
-    in srgb,
-    var(--background-color) 84%,
-    var(--foreground-color) 14%
-  );
-}
-
-html[data-theme='dark'] {
-  --background-color: #1e1e1e;
-  --foreground-color: #f5f5f5;
-  --transparent-color: color-mix(
-    in srgb,
-    var(--background-color) 75%,
-    var(--foreground-color) 0%
-  );
-  --accent-color: color-mix(
-    in srgb,
-    var(--background-color) 84%,
-    var(--foreground-color) 7%
-  );
-  --neutral-color: color-mix(
-    in srgb,
-    var(--background-color) 84%,
-    var(--foreground-color) 21%
-  );
-  --highlight-color: color-mix(
-    in srgb,
-    var(--background-color) 84%,
-    var(--foreground-color) 14%
-  );
-}
-
 :root {
   --error-color: #cf1c25;
   --success-color: #007859;
@@ -111,9 +7,58 @@ html[data-theme='dark'] {
   --dark: #1e1e1e;
 }
 
+html[data-theme='light'] {
+  --background-color: #f5f5f5;
+  --foreground-color: #1e1e1e;
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-theme='system'] {
+    --background-color: #f5f5f5;
+    --foreground-color: #1e1e1e;
+  }
+}
+
+html[data-theme='dark'] {
+  --background-color: #1e1e1e;
+  --foreground-color: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme='system'] {
+    --background-color: #1e1e1e;
+    --foreground-color: #f5f5f5;
+  }
+}
+
+html[data-theme='light'],
+html[data-theme='dark'],
+html[data-theme='system'] {
+  --transparent-color: color-mix(
+    in srgb,
+    var(--background-color) 75%,
+    var(--foreground-color) 0%
+  );
+  --accent-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 7%
+  );
+  --neutral-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 21%
+  );
+  --highlight-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 14%
+  );
+}
+
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   line-height: 1;
   color: var(--foreground-color);
 }
@@ -139,7 +84,7 @@ body {
   cursor: pointer;
 }
 
-#container {
+.container {
   container-type: inline-size;
   container-name: container;
 }
@@ -152,74 +97,91 @@ header {
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  top: 0px;
+  top: 0;
   gap: 28px;
   z-index: 9999;
 }
 
-.header-page::before {
-  position: absolute;
-  top: 0px;
-  content: '';
-  display: block;
-  left: 0px;
-  height: inherit;
-  background-color: var(--accent-color);
-  backdrop-filter: blur(21px);
-  width: 100%;
-  z-index: -1;
-  border-bottom: 1px solid var(--highlight-color);
-}
-
-.header-dashboard::before {
-  position: absolute;
-  top: 0px;
-  content: '';
-  display: block;
-  left: 0px;
-  height: inherit;
-  background-color: var(--transparent-color);
-  backdrop-filter: blur(21px);
-  width: 100%;
-  z-index: -1;
-}
-
 .header-page,
 .header-dashboard {
+  position: relative; /* required for ::before layering */
   padding-inline: 14px;
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  .header-page,
-  .header-dashboard {
-    padding-inline: 14px;
-  }
+.header-page::before,
+.header-dashboard::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+  height: inherit;
+  width: 100%;
+  backdrop-filter: blur(21px);
+  z-index: -1;
+}
+
+.header-page::before {
+  background-color: var(--accent-color);
+  border-bottom: 1px solid var(--highlight-color);
+}
+
+.header-dashboard::before {
+  background-color: var(--transparent-color);
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-block-start: 56px;
+  gap: 56px;
+  z-index: 5;
+}
+
+.main-page,
+.main-dashboard {
+  width: 100%;
+  padding-inline: 14px;
 }
 
 @media (min-width: 769px) {
   .header-dashboard {
     grid-area: 1/2/2/3;
   }
+  .main-dashboard {
+    grid-area: 2/2/3/3;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1536px) {
-  .header-page {
+  .header-page,
+  .main-page {
     padding-inline: 28px;
   }
 
-  .header-dashboard {
+  .header-dashboard,
+  .main-dashboard {
     padding-inline: 14px 28px;
   }
 }
 
 @media (min-width: 1537px) {
-  .header-page {
+  .header-page,
+  .main-page {
     padding-inline: calc((100% - 1537px + 56px) / 2);
   }
 
   .header-dashboard {
-    padding-inline-end: calc(100% - 1537px + 112px);
     padding-inline-start: 16px;
+    padding-inline-end: calc(100% - 1537px + 112px);
+  }
+
+  .main-dashboard {
+    padding-inline-start: 14px;
+    padding-inline-end: calc(100% - 1537px + 112px);
   }
 }
