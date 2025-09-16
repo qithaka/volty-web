@@ -1,1 +1,145 @@
 @import 'tailwindcss';
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme='system'] {
+    --background-color: #1e1e1e;
+    --foreground-color: #f5f5f5;
+    --transparent-color: color-mix(
+      in srgb,
+      var(--background-color) 75%,
+      var(--foreground-color) 0%
+    );
+    --accent-color: color-mix(
+      in srgb,
+      var(--background-color) 84%,
+      var(--foreground-color) 7%
+    );
+    --neutral-color: color-mix(
+      in srgb,
+      var(--background-color) 84%,
+      var(--foreground-color) 21%
+    );
+    --highlight-color: color-mix(
+      in srgb,
+      var(--background-color) 84%,
+      var(--foreground-color) 14%
+    );
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html[data-theme='system'] {
+    --background-color: #f5f5f5;
+    --foreground-color: #1e1e1e;
+    --transparent-color: color-mix(
+      in srgb,
+      var(--background-color) 75%,
+      var(--foreground-color) 0%
+    );
+    --accent-color: color-mix(
+      in srgb,
+      var(--background-color) 84%,
+      var(--foreground-color) 7%
+    );
+    --neutral-color: color-mix(
+      in srgb,
+      var(--background-color) 84%,
+      var(--foreground-color) 21%
+    );
+    --highlight-color: color-mix(
+      in srgb,
+      var(--background-color) 84%,
+      var(--foreground-color) 14%
+    );
+  }
+}
+
+html[data-theme='light'] {
+  --background-color: #f5f5f5;
+  --foreground-color: #1e1e1e;
+  --transparent-color: color-mix(
+    in srgb,
+    var(--background-color) 75%,
+    var(--foreground-color) 0%
+  );
+  --accent-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 7%
+  );
+  --neutral-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 21%
+  );
+  --highlight-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 14%
+  );
+}
+
+html[data-theme='dark'] {
+  --background-color: #1e1e1e;
+  --foreground-color: #f5f5f5;
+  --transparent-color: color-mix(
+    in srgb,
+    var(--background-color) 75%,
+    var(--foreground-color) 0%
+  );
+  --accent-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 7%
+  );
+  --neutral-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 21%
+  );
+  --highlight-color: color-mix(
+    in srgb,
+    var(--background-color) 84%,
+    var(--foreground-color) 14%
+  );
+}
+
+:root {
+  --error-color: #cf1c25;
+  --success-color: #007859;
+  --light: #f5f5f5;
+  --dark: #1e1e1e;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  line-height: 1;
+  color: var(--foreground-color);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--accent-color);
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+#container {
+  container-type: inline-size;
+  container-name: container;
+}
